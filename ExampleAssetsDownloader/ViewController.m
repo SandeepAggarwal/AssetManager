@@ -35,7 +35,11 @@ static NSString* PhotoIdentifier = @"PhotoIdentifier";
     [fetcher fetchPhotosWithOffset:0 count:10 completionBlock:^(NSArray<Photo *> *photos, NSError *error)
     {
         [weakSelf.photos addObjectsFromArray:photos];
-        [weakSelf. tableView reloadData];
+        
+        dispatch_async(dispatch_get_main_queue(), ^
+        {
+            [weakSelf. tableView reloadData];
+        });
     }];
     [self addTableViewController];
 }
@@ -44,7 +48,13 @@ static NSString* PhotoIdentifier = @"PhotoIdentifier";
 {
     [super viewDidLayoutSubviews];
     
-    [self.tableView setFrame:CGRectInset(self.view.bounds, 40, 20)];
+    CGFloat width,height,x,y;
+    
+    width = [self maxPhotoWidth];
+    height = self.view.bounds.size.height - 100;
+    y = 100;
+    x = (self.view.bounds.size.width - width)*0.5;
+    [self.tableView setFrame:CGRectMake(x , y, width, height)];
 }
 
 #pragma mark - <UITableViewDataSource>
