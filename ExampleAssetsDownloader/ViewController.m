@@ -16,7 +16,9 @@
 @interface ViewController ()<UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) UITableView* tableView;
+@property (nonatomic, strong) PhotoObjectsFetcher* fetcher;
 @property (nonatomic, strong) NSMutableArray<Photo *>* photos;
+@property (nonatomic, strong) UIActivityIndicatorView* indicatorView;
 
 @end
 
@@ -28,19 +30,9 @@ static NSString* PhotoIdentifier = @"PhotoIdentifier";
 {
     [super viewDidLoad];
     
+    _fetcher = [PhotoObjectsFetcher new];
     self.photos = [NSMutableArray new];
-    PhotoObjectsFetcher* fetcher = [PhotoObjectsFetcher new];
-    
-    __weak typeof(self) weakSelf = self;
-    [fetcher fetchPhotosWithOffset:0 count:10 completionBlock:^(NSArray<Photo *> *photos, NSError *error)
-    {
-        [weakSelf.photos addObjectsFromArray:photos];
-        
-        dispatch_async(dispatch_get_main_queue(), ^
-        {
-            [weakSelf. tableView reloadData];
-        });
-    }];
+    [self loadMoreData];
     [self addTableViewController];
 }
 
@@ -95,6 +87,15 @@ static NSString* PhotoIdentifier = @"PhotoIdentifier";
     return 30.0f;
 }
 
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    float bottomEdge = scrollView.contentOffset.y + scrollView.frame.size.height;
+    if (bottomEdge >= scrollView.contentSize.height)
+    {
+        [self addIndicatorView];
+        [self loadMoreData];
+    }
+}
 
 #pragma mark - Private Methods
 
@@ -114,6 +115,26 @@ static NSString* PhotoIdentifier = @"PhotoIdentifier";
     [tableView setBackgroundColor:[UIColor clearColor]];
     [tableView setAllowsSelection:NO];
     [tableViewController didMoveToParentViewController:self];
+}
+
+- (void)addIndicatorView
+{
+    if (!self.indicatorView)
+    {
+        self.indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+        [self.indicatorView setColor:[UIColor grayColor]];
+        [self.indicatorView setHidesWhenStopped:YES];
+    }
+    self.tableView.tableFooterView = self.indicatorView;
+    [self.indicatorView startAnimating];
+}
+
+- (void)removeIndicatorView
+{
+    if (self.indicatorView.isAnimating)
+    {
+        [self.indicatorView stopAnimating];
+    }
 }
 
 - (CGFloat)heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -148,6 +169,22 @@ static NSString* PhotoIdentifier = @"PhotoIdentifier";
 - (Photo*)photoObjectForIndexPath:(NSIndexPath *)indexPath
 {
     return [self.photos objectAtIndex:indexPath.section];
+}
+
+- (void)loadMoreData
+{
+    [self addIndicatorView];
+    __weak typeof(self) weakSelf = self;
+    [_fetcher fetchPhotosWithOffset:self.photos.count count:10 completionBlock:^(NSArray<Photo *> *photos, NSError *error)
+     {
+         [weakSelf.photos addObjectsFromArray:photos];
+         
+         dispatch_async(dispatch_get_main_queue(), ^
+            {
+                [weakSelf. tableView reloadData];
+                [weakSelf removeIndicatorView];
+            });
+     }];
 }
 
 @end

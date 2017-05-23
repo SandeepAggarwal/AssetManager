@@ -7,6 +7,7 @@
 //
 
 #import "PhotoCell.h"
+#import "AssetManager.h"
 
 @interface PhotoCell ()
 
@@ -71,14 +72,16 @@
     self.photoImageView.image = nil;
     
     __weak typeof(self) weakSelf = self;
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^
+    
+    AssetManager* manager = [AssetManager sharedManager];
+    [manager loadAssetType:(AssetImage) WithURL:photo.url options:(AssetDownloaderCache) completed:^(id asset, NSData *data, NSError *error, BOOL finished, NSURL *assetURL)
     {
-        UIImage* image = [UIImage imageWithData:[NSData dataWithContentsOfURL:photo.url]];
+        UIImage* image = asset;
         dispatch_async(dispatch_get_main_queue(), ^
-        {
-            [weakSelf.photoImageView setImage:image];
-        });
-    });
+           {
+               [weakSelf.photoImageView setImage:image];
+           });
+    }];
     
     [self setNeedsLayout];
     [self layoutIfNeeded];

@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C102362A1ED16C220039B8F9 /* PhotoObjectsFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F6994E1ED079590003C1E6 /* PhotoObjectsFetcher.m */; };
+		C1ACD8091ED493C700EC33B3 /* AssetCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C1ACD8021ED493C700EC33B3 /* AssetCache.m */; };
+		C1ACD80A1ED493C700EC33B3 /* AssetCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C1ACD8021ED493C700EC33B3 /* AssetCache.m */; };
+		C1ACD80B1ED493C700EC33B3 /* AssetDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = C1ACD8041ED493C700EC33B3 /* AssetDownloader.m */; };
+		C1ACD80C1ED493C700EC33B3 /* AssetDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = C1ACD8041ED493C700EC33B3 /* AssetDownloader.m */; };
+		C1ACD80D1ED493C700EC33B3 /* AssetDownloadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = C1ACD8061ED493C700EC33B3 /* AssetDownloadOperation.m */; };
+		C1ACD80E1ED493C700EC33B3 /* AssetDownloadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = C1ACD8061ED493C700EC33B3 /* AssetDownloadOperation.m */; };
+		C1ACD80F1ED493C700EC33B3 /* AssetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C1ACD8081ED493C700EC33B3 /* AssetManager.m */; };
+		C1ACD8101ED493C700EC33B3 /* AssetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C1ACD8081ED493C700EC33B3 /* AssetManager.m */; };
+		C1ACD8151ED4B3C200EC33B3 /* AssetImageParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C1ACD8141ED4B3C200EC33B3 /* AssetImageParser.m */; };
+		C1ACD8161ED4B3C200EC33B3 /* AssetImageParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C1ACD8141ED4B3C200EC33B3 /* AssetImageParser.m */; };
+		C1ACD8191ED4B3CF00EC33B3 /* AssetJSONParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C1ACD8181ED4B3CF00EC33B3 /* AssetJSONParser.m */; };
+		C1ACD81A1ED4B3CF00EC33B3 /* AssetJSONParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C1ACD8181ED4B3CF00EC33B3 /* AssetJSONParser.m */; };
 		C1F6991B1ED05FE60003C1E6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F6991A1ED05FE60003C1E6 /* main.m */; };
 		C1F6991E1ED05FE60003C1E6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F6991D1ED05FE60003C1E6 /* AppDelegate.m */; };
 		C1F699211ED05FE60003C1E6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F699201ED05FE60003C1E6 /* ViewController.m */; };
@@ -32,6 +45,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C1ACD8011ED493C700EC33B3 /* AssetCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssetCache.h; sourceTree = "<group>"; };
+		C1ACD8021ED493C700EC33B3 /* AssetCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssetCache.m; sourceTree = "<group>"; };
+		C1ACD8031ED493C700EC33B3 /* AssetDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssetDownloader.h; sourceTree = "<group>"; };
+		C1ACD8041ED493C700EC33B3 /* AssetDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssetDownloader.m; sourceTree = "<group>"; };
+		C1ACD8051ED493C700EC33B3 /* AssetDownloadOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssetDownloadOperation.h; sourceTree = "<group>"; };
+		C1ACD8061ED493C700EC33B3 /* AssetDownloadOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssetDownloadOperation.m; sourceTree = "<group>"; };
+		C1ACD8071ED493C700EC33B3 /* AssetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssetManager.h; sourceTree = "<group>"; };
+		C1ACD8081ED493C700EC33B3 /* AssetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssetManager.m; sourceTree = "<group>"; };
+		C1ACD8121ED4B36900EC33B3 /* AssetType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssetType.h; sourceTree = "<group>"; };
+		C1ACD8131ED4B3C200EC33B3 /* AssetImageParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssetImageParser.h; sourceTree = "<group>"; };
+		C1ACD8141ED4B3C200EC33B3 /* AssetImageParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssetImageParser.m; sourceTree = "<group>"; };
+		C1ACD8171ED4B3CF00EC33B3 /* AssetJSONParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssetJSONParser.h; sourceTree = "<group>"; };
+		C1ACD8181ED4B3CF00EC33B3 /* AssetJSONParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssetJSONParser.m; sourceTree = "<group>"; };
 		C1F699161ED05FE60003C1E6 /* ExampleAssetsDownloader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExampleAssetsDownloader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1F6991A1ED05FE60003C1E6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C1F6991C1ED05FE60003C1E6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -71,10 +97,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C1ACD8001ED493C700EC33B3 /* AssetsManager */ = {
+			isa = PBXGroup;
+			children = (
+				C1ACD8121ED4B36900EC33B3 /* AssetType.h */,
+				C1ACD8011ED493C700EC33B3 /* AssetCache.h */,
+				C1ACD8021ED493C700EC33B3 /* AssetCache.m */,
+				C1ACD8031ED493C700EC33B3 /* AssetDownloader.h */,
+				C1ACD8041ED493C700EC33B3 /* AssetDownloader.m */,
+				C1ACD8051ED493C700EC33B3 /* AssetDownloadOperation.h */,
+				C1ACD8061ED493C700EC33B3 /* AssetDownloadOperation.m */,
+				C1ACD8071ED493C700EC33B3 /* AssetManager.h */,
+				C1ACD8081ED493C700EC33B3 /* AssetManager.m */,
+				C1ACD8131ED4B3C200EC33B3 /* AssetImageParser.h */,
+				C1ACD8141ED4B3C200EC33B3 /* AssetImageParser.m */,
+				C1ACD8171ED4B3CF00EC33B3 /* AssetJSONParser.h */,
+				C1ACD8181ED4B3CF00EC33B3 /* AssetJSONParser.m */,
+			);
+			path = AssetsManager;
+			sourceTree = "<group>";
+		};
 		C1F6990D1ED05FE60003C1E6 = {
 			isa = PBXGroup;
 			children = (
-				C1F699411ED0623E0003C1E6 /* AssetsDownloader */,
+				C1ACD8001ED493C700EC33B3 /* AssetsManager */,
 				C1F699181ED05FE60003C1E6 /* ExampleAssetsDownloader */,
 				C1F699321ED05FE60003C1E6 /* ExampleAssetsDownloaderTests */,
 				C1F699171ED05FE60003C1E6 /* Products */,
@@ -124,13 +170,6 @@
 				C1F699351ED05FE60003C1E6 /* Info.plist */,
 			);
 			path = ExampleAssetsDownloaderTests;
-			sourceTree = "<group>";
-		};
-		C1F699411ED0623E0003C1E6 /* AssetsDownloader */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = AssetsDownloader;
 			sourceTree = "<group>";
 		};
 		C1F699421ED06C990003C1E6 /* Models */ = {
@@ -263,12 +302,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1ACD8091ED493C700EC33B3 /* AssetCache.m in Sources */,
 				C1F699451ED06CF10003C1E6 /* Photo.m in Sources */,
 				C1F6994A1ED06DED0003C1E6 /* PhotoCell.m in Sources */,
+				C1ACD8191ED4B3CF00EC33B3 /* AssetJSONParser.m in Sources */,
+				C1ACD80B1ED493C700EC33B3 /* AssetDownloader.m in Sources */,
 				C1F699211ED05FE60003C1E6 /* ViewController.m in Sources */,
 				C1F6991E1ED05FE60003C1E6 /* AppDelegate.m in Sources */,
+				C1ACD80F1ED493C700EC33B3 /* AssetManager.m in Sources */,
 				C1F6991B1ED05FE60003C1E6 /* main.m in Sources */,
 				C1F6994F1ED079590003C1E6 /* PhotoObjectsFetcher.m in Sources */,
+				C1ACD80D1ED493C700EC33B3 /* AssetDownloadOperation.m in Sources */,
+				C1ACD8151ED4B3C200EC33B3 /* AssetImageParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,9 +321,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1ACD8161ED4B3C200EC33B3 /* AssetImageParser.m in Sources */,
+				C1ACD81A1ED4B3CF00EC33B3 /* AssetJSONParser.m in Sources */,
 				C1F6994B1ED06DED0003C1E6 /* PhotoCell.m in Sources */,
+				C102362A1ED16C220039B8F9 /* PhotoObjectsFetcher.m in Sources */,
 				C1F699461ED06CF10003C1E6 /* Photo.m in Sources */,
+				C1ACD80A1ED493C700EC33B3 /* AssetCache.m in Sources */,
+				C1ACD8101ED493C700EC33B3 /* AssetManager.m in Sources */,
 				C1F699341ED05FE60003C1E6 /* ExampleAssetsDownloaderTests.m in Sources */,
+				C1ACD80C1ED493C700EC33B3 /* AssetDownloader.m in Sources */,
+				C1ACD80E1ED493C700EC33B3 /* AssetDownloadOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

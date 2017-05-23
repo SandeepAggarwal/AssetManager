@@ -7,6 +7,7 @@
 //
 
 #import "PhotoObjectsFetcher.h"
+#import "AssetManager.h"
 
 @interface PhotoObjectsFetcher ()
 
@@ -33,10 +34,8 @@
 
 - (void)fetchPhotosWithOffset:(NSInteger)offset count:(NSInteger)count completionBlock:(PhotoObjectsFetcherResultBlock)block
 {
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
-    
-    [[session dataTaskWithURL:self.url
-    completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
+    AssetManager* manager = [AssetManager sharedManager];
+    [manager loadAssetType:(AssetJSON) WithURL:self.url options:(AssetDownloaderCache) completed:^(id asset, NSData *data, NSError *error, BOOL finished, NSURL *assetURL)
     {
         if (!block)
         {
@@ -49,22 +48,16 @@
         }
         else
         {
-            block([self photoObjectsFromResponse:data], nil);
+            block([self photoObjectsFromResponse:asset], nil);
         }
-    }] resume];
+        
+    }];
 }
 
 #pragma mark - <Private Methods>
 
-- (NSArray<Photo *> *)photoObjectsFromResponse:(NSData *)data
+- (NSArray<Photo *> *)photoObjectsFromResponse:(NSArray *)jsonResponse
 {
-    NSError *jsonError;
-    NSArray *jsonResponse = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
-    if (jsonError)
-    {
-        return nil;
-    }
-    
     NSMutableArray* photoObjects = [NSMutableArray new];
     for (NSDictionary* object  in jsonResponse)
     {
