@@ -101,14 +101,14 @@
 			isa = PBXGroup;
 			children = (
 				C1ACD8121ED4B36900EC33B3 /* AssetType.h */,
+				C1ACD8071ED493C700EC33B3 /* AssetManager.h */,
+				C1ACD8081ED493C700EC33B3 /* AssetManager.m */,
 				C1ACD8011ED493C700EC33B3 /* AssetCache.h */,
 				C1ACD8021ED493C700EC33B3 /* AssetCache.m */,
 				C1ACD8031ED493C700EC33B3 /* AssetDownloader.h */,
 				C1ACD8041ED493C700EC33B3 /* AssetDownloader.m */,
 				C1ACD8051ED493C700EC33B3 /* AssetDownloadOperation.h */,
 				C1ACD8061ED493C700EC33B3 /* AssetDownloadOperation.m */,
-				C1ACD8071ED493C700EC33B3 /* AssetManager.h */,
-				C1ACD8081ED493C700EC33B3 /* AssetManager.m */,
 				C1ACD8131ED4B3C200EC33B3 /* AssetImageParser.h */,
 				C1ACD8141ED4B3C200EC33B3 /* AssetImageParser.m */,
 				C1ACD8171ED4B3CF00EC33B3 /* AssetJSONParser.h */,
